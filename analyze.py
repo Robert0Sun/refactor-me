@@ -6,36 +6,17 @@ df = pd.read_csv('data/raw/shopping_behavior_updated.csv')
 # calculate summary statistics on the Purchase Amount column
 # TODO: Is there a way to encapsulate all this functionality
 # TODO: in one function call?
-s1 = df['Purchase Amount (USD)'].mean()
-s2 = df['Purchase Amount (USD)'].median()
-s3 = df['Purchase Amount (USD)'].max()
-s4 = df['Purchase Amount (USD)'].min()
-s5 = df['Purchase Amount (USD)'].std()
+#df.head()
 
 print("Summary statistics on Purchase Amount (USD)")
-print("Mean", s1)
-print("Median", s2)
-print("Max", s3)
-print("Min", s4)
-print("Standard Dev", s5)
-print()
+df.agg({"Purchase Amount (USD)": ['min', 'max', 'mean', 'median', 'std']})
 
 # calculate summary statistics on the Age column
 # TODO: Is there a way to encapsulate all this functionality
 # TODO: in one function call?
-s1 = df['Age'].mean()
-s2 = df['Age'].median()
-s3 = df['Age'].max()
-s4 = df['Age'].min()
-s5 = df['Age'].std()
 
 print("Summary statistics on Age")
-print("Mean", s1)
-print("Median", s2)
-print("Max", s3)
-print("Min", s4)
-print("Standard Dev", s5)
-print()
+df.agg({"Age": ['min', 'max', 'mean', 'median', 'std']})
 
 # summary statistics
 # TODO: is there another function we can use to calculate metrics on groups?
